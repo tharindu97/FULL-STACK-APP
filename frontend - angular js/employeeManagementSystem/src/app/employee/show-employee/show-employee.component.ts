@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-employee',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowEmployeeComponent implements OnInit {
 
-  constructor() { }
+  EmployeeList: any = [];
+
+  constructor(private service: SharedService) { }
 
   ngOnInit(): void {
+    this.getEmployeetList();
+  }
+
+   // Get Emolyee Details
+   getEmployeetList(){
+    this.service.getApi("/Employee").subscribe(data => {
+      this.EmployeeList = data;
+    });
   }
 
 }
