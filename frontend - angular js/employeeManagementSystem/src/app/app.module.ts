@@ -11,6 +11,7 @@ import { AddEditEmployeeComponent } from './employee/add-edit-employee/add-edit-
 import { SharedService } from './shared.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

@@ -21,11 +21,11 @@ export class SharedService {
 
   patchApi(endpoint:string, requestBody: any){
       let url = environment.requestPrefix + endpoint;
-      return this.http.patch(url, requestBody);
+      return this.http.put(url, requestBody);
   }
 
-  deleteApi(endpoint:string){
-      let url = environment.requestPrefix + endpoint;
+  deleteApi(endpoint:string, id: any){
+      let url = environment.requestPrefix + endpoint + id;
       return this.http.delete(url);
   }
 }
